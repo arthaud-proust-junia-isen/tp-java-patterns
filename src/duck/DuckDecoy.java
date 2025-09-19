@@ -23,5 +23,9 @@ public class DuckDecoy {
         }
     }
 
-
+    public void singAll() {
+        for(IDuck duck : this.ducks) {
+            duck.sing();
+        }
+    }
 }
