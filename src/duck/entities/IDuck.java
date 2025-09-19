@@ -1,4 +1,6 @@
-package duck;
+package duck.entities;
+
+import duck.behaviors.BehaviorFly;
 
 public interface IDuck {
     BehaviorFly getBehaviorFly();

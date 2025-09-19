@@ -1,23 +1,29 @@
 import duck.*;
+import duck.behaviors.BehaviorFly;
+import duck.behaviors.BehaviorFlyLikeSuperman;
+import duck.entities.DuckMallard;
+import duck.entities.DuckPlastic;
+import duck.entities.DuckPochard;
+import duck.entities.IDuck;
 
 public class Main {
     public static void main(String[] args) {
-        Mallard mallard = new Mallard("Jeremy");
-        Pochard pochard = new Pochard("Joris");
-        PlasticDuck plasticDuck = new PlasticDuck("Jonathan");
+        DuckMallard mallard = new DuckMallard("Jeremy");
+        DuckPochard pochard = new DuckPochard("Joris");
+        DuckPlastic plastic = new DuckPlastic("Jonathan");
 
         DuckDecoy decoy = new DuckDecoy();
         decoy.addDuck(mallard);
         decoy.addDuck(pochard);
-        decoy.addDuck(plasticDuck);
+        decoy.addDuck(plastic);
 
         decoy.flyAll();
 
         // La fée vient le voir.
-        plasticDuck.setBehaviorFly(new BehaviorLikeSupermanFly());
+        plastic.setBehaviorFly(new BehaviorFlyLikeSuperman());
         decoy.flyAll();
 
-        pochard.setBehaviorFly(plasticDuck.getBehaviorFly());
+        pochard.setBehaviorFly(plastic.getBehaviorFly());
         decoy.flyAll();
 
         mallard.setBehaviorFly(new BehaviorFly() {

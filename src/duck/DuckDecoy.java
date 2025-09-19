@@ -1,5 +1,7 @@
 package duck;
 
+import duck.entities.IDuck;
+
 import java.util.ArrayList;
 import java.util.List;
 
